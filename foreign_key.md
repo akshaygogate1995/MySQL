@@ -7,7 +7,7 @@ CREATE TABLE students (
     student_fname VARCHAR(30) NOT NULL,
     student_lname VARCHAR(30) NOT NULL,
     student_mname VARCHAR(30),
-    student_email VARCHAR(30) NOT NULL,
+    student_email VARCHAR(30) NOT NULL UNIQUE KEY,
     student_phone VARCHAR(15) NOT NULL,
     student_alternate_phone VARCHAR(15),
     enrollment_date TIMESTAMP NOT NULL,
@@ -17,3 +17,5 @@ CREATE TABLE students (
     source_of_joining VARCHAR(30) NOT NULL,
     location VARCHAR(30) NOT NULL
 );
+
+
