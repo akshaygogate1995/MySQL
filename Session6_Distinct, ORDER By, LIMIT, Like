@@ -1,1 +1,68 @@
+DISTINT ->
+
+select location from students;
+
+select DISTINCT location from students;
+select student_company location from students;
+select source_of_joining location from students;
+
+
+ORDER BY ->
+It is by default done in ascending order
+
+select * from students ORDER BY years_of_exp;
+select * from students ORDER BY student_fname;
+
+select student_fname from students ORDER BY years_of_exp;
+select student_fname from students ORDER BY years_of_exp desc; (with Higher exp first)
+
+select * from students ORDER BY years_of_exp,student_fname; (DOuble Sorting) 
+
+LIMIT --> 
+ IN most cases it should be used with ORDER BY
+
+select * from students LIMIT 3;
+
+How to get 3 candidates with least exp?
+
+select * from students ORDER BY years_of_exp LIMIT 3;
+
+select * from students ORDER BY years_of_exp desc LIMIT 3;
+
+I want to find last 5 ppl who joined the courses are from which sources?
+
+select source_of_joining from students ORDER BY enrollment_date desc limit 5;
+
+Also I dont want duplicate entries of source_of_joining
+
+select DISTINCT source_of_joining from students ORDER BY enrollment_date desc limit 5;   #This Query wont work
+
+to find the candidate who joined recently
+
+select * from students ORDER BY enrollment_date desc limit 1;
+
+select * from students ORDER BY enrollment_date limit 0,3; # First 3 candidates who joined course
+
+select * from students ORDER BY enrollment_date limit 3,2;  # In this case 4th and 5th record will be given 
+
+
+LIKE -->
+
+_   is a single character 
+
+select * from students WHERE student_fname LIKE '%ra%';   % is a wildcard character
+
+select * from students WHERE student_fname LIKE 'ra%';   # In this case name should start with ra and end any how
+
+select * from students WHERE student_fname LIKE '%re';   # STudents who's name ends with re
+
+select * from students WHERE student_fname LIKE '_____';   # students who first name has exactly 5 characters that is why there is _ 5 times
+
+
+
+
+
+
+
+
 
