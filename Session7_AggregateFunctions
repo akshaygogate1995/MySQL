@@ -1,1 +1,18 @@
+Aggregate Functions
+
+COUNT --> 
+
+select count(*) from students;
+
+select count(student_company) from students;   # repeat will be there
+
+select count(DISTINCT student_company) from students;   # to get unique count
+
+select count(DISTINCT location) from students;
+
+select count(*) from students where batch_date like '2025-%';
+
+GROUP BY -->
+
+
 
