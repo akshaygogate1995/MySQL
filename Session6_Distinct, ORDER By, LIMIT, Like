@@ -37,6 +37,13 @@ Also I dont want duplicate entries of source_of_joining
 
 select DISTINCT source_of_joining from students ORDER BY enrollment_date desc limit 5;   #This Query wont work
 
+Solution ->  The query you provided won't work because of a logical issue with the ORDER BY clause. When you use DISTINCT, it applies to the entire row, not just a single column. Therefore, ordering by a column that isn't included in the SELECT clause can cause an error.
+
+To fix this, you need to include enrollment_date in the SELECT clause. Here's a corrected version of your query:
+
+SELECT DISTINCT source_of_joining, enrollment_date  FROM students  ORDER BY enrollment_date DESC  LIMIT 5;  # This Works
+
+
 to find the candidate who joined recently
 
 select * from students ORDER BY enrollment_date desc limit 1;
