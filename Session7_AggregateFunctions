@@ -14,5 +14,63 @@ select count(*) from students where batch_date like '2025-%';
 
 GROUP BY -->
 
+If we are using Having then we can't use where clause : 
+
+How many ppl joined the course which has source linkedin ?
+
+select source_of_joining, count(*) from students GROUP BY source_of_joining;
+
+how to find students who joined are from which location with count ?
+
+select location, count(*) from students group by location;
+
+how to do grouping based on 2 columns ?
+
+select location, source_of_joining, count(*) from students GROUP BY location, source_of_joining;
+
+how many people are enrolled to each course?
+
+select selected_course, count(*) from students group by selected_course;
+
+select batch_date, selected_course, count(*) from students group by batch_date, selected_course;
+
+MIN & MAX -->
+
+select MIN(years_of_exp) from students;
+
+select MAX(years_of_exp) from students;
+
+select student_fname from students order by years_of_exp limit 1;
+
+People joining what is the max exp they have
+
+-- each souce of joining I want to get max experience
+
+select source_of_joining, MAX(years_of_exp) from students group by source_of_joining;
+
+
+SUM  -->
+
+SUM of exp joining from linkedin
+
+select source_of_joining, sum(years_of_exp) from students group by source_of_joining;
+
+AVG --> 
+
+select source_of_joining, avg(years_of_exp) from students group by source_of_joining;
+
+select location, avg(years_of_exp) from students group by location;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
